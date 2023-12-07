@@ -1,17 +1,27 @@
 pipeline {
     agent any
 
+    environment {
+        JAVA_HOME = tool 'JDK' // Assumes you have configured a JDK tool in Jenkins
+    }
+
     stages {
-        stage("compile") {
+       
+
+        stage("Compile") {
             steps {
-                sh 'javac Student.java'
+                // Compile your Java code
+                sh "${env.JAVA_HOME}/bin/javac -cp . Student.java"
             }
         }
 
-        stage("run") {
+
+        stage("Run") {
             steps {
-                sh 'java Student'
+                // Run your Java application
+                sh "${env.JAVA_HOME}/bin/java -cp . Student"
             }
         }
+
     }
 }
