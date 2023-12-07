@@ -19,7 +19,7 @@ pipeline {
         stage("Run") {
             steps {
                 // Run your Java application
-                sh "${env.JAVA_HOME}/bin/java -cp . Student"
+                bat "${env.JAVA_HOME}/bin/java -cp . Student"
             }
         }
 
