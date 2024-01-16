@@ -28,5 +28,6 @@ public class Student {
         stu.setId(1);
         stu.setName("Rakesh");
         System.out.println(stu);
+        System.out.println("Hiii Rakesh.....");
     }
 }
